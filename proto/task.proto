@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package="https://github.com/Subasri-V/task.git";
+
+service Service {
+    rpc SignIn(SignInDetails) returns(LogInResponse);
+    rpc SignUp(SignUpDetails) returns(SignUpResponse);
+}
+
+message SignInDetails {
+    string username =1;
+    string password =2;
+} 
+
+message LogInResponse{
+    string message=1;
+}
+
+message SignUpDetails {
+    string username=1;
+    string password=2;
+    string confirmPassword=3;
+}
+
+message SignUpResponse{
+    string message=1;
+}
